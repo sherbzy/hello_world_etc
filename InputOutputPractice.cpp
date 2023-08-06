@@ -6,7 +6,8 @@
 
 // function used to read from "filename" and output its data to stdout
 bool InputOutputPractice::readFileToStdout() {
-    cout << "Here are some fun facts about Lake Powell: " << endl;
+    cout << "Practice file input and stdout" << endl;
+    cout << "\tHere are some fun facts about Lake Powell: " << endl;
 
     // open file stream
     ifstream input;
@@ -31,8 +32,10 @@ bool InputOutputPractice::readFileToStdout() {
 
 // function that asks for user input and writes it to a file
 bool InputOutputPractice::printStdinToFile() {
-    cout << "\nTell me your favorite joke and I will add it to my list of jokes! Press enter when done..." << endl;
-    string user_joke;
+    cout << "Practice file output and stdin" << endl;
+    cout << "\tTell me your favorite joke and I will add it to my list of jokes! Press enter when done..." << endl;
+    cout << "\tUncomment in InputOutputPractice to not skip this section." << endl;
+    /* string user_joke;
     getline(cin, user_joke);
 
     ofstream output;
@@ -43,8 +46,8 @@ bool InputOutputPractice::printStdinToFile() {
     }
 
     output << user_joke << endl;
-    output.close();
-    cout << "Thanks! Your joke has been added!" << endl;
+    output.close(); */
+    cout << "\tThanks! Your joke has been added!" << endl;
     return true;
 }
 

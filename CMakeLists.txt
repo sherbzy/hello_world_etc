@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(hello_world_etc main.cpp
         InputOutputPractice.cpp
-        InputOutputPractice.h)
+        InputOutputPractice.h
+        stringyPractice.cpp
+        stringyPractice.h)

@@ -1,7 +1,7 @@
 Hello World, etc.
 
 The purpose of this project is as a bit of a dummy check to make sure I still know how to use clion and its debugger and to practice
-the c++ syntax for some standard things like file input/output, etc. 
+the c++ syntax for some standard things like file input/output, string manipulation, etc. 
 
 
 **********NOTES & CHEATSHEET**********
@@ -14,3 +14,7 @@ the c++ syntax for some standard things like file input/output, etc.
      5. input stuff
      6. streamVarName.close()
         Note: file must be in cmake-build-debug or else change the project working directory
+ - String Manipulation
+   - varName.substr(start_pos, length)
+   - varName.size() or .length() <- returns int
+   - varName.empty() <- returns bool
