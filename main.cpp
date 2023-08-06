@@ -6,29 +6,35 @@
  *  Description: This is just a dummy check to make sure I can use clion its debugger and know
  *  the c++ syntax for some standard things like file input/output, etc.
  *
- *  Note: creating new file in windows cmd is "type nul > filename.txt"
  */
+
 #include <iostream>
 #include <fstream>
 using namespace std;
 
 // globals
 string POWELL_FACTS_FILENAME = "text/powell_facts.txt";
+string JOKES_FILENAME = "text/list_jokes.txt";
 
-bool readFileToStdout(string filename);
+// function declarations
+bool readFileToStdout();
+bool printStdinToFile();
 
 int main() {
     cout << "Hello, World!" << endl;
 
-    // how to read from and write to files
+    // read from file and output to stdout
     cout << "\n\n\n1. Practice reading from and writing to files." << endl;
-    cout << "Here are some fun facts about Lake Powell: " << endl;
-    if (!readFileToStdout(POWELL_FACTS_FILENAME)) {
+    if (!readFileToStdout()) {
         cout << "Terminating program...\nGoodbye." << endl;
         return -1;
     }
 
-
+    // read from stdin and output to file
+    if (!printStdinToFile()) {
+        cout << "Terminating program...\nGoodbye." << endl;
+        return -1;
+    }
 
 
     // return 0 to indicate the program terminated successfully...btw
@@ -36,25 +42,19 @@ int main() {
 }
 
 
-/*
- * Reading from file:
- *    1. #include <fstream>
- *    2. ifstream/ofstream streamVarName
- *    3. streamVarName.open("filename.txt")
- *    4. check for error = if (streamVarName.fail()) { cout an error message }
- *    5. input stuff
- *    6. streamVarName.close()
- *
- *    Note: file must be in cmake-build-debug
- */
+
+
+
 
 // function used to read from "filename" and output its data to stdout
-bool readFileToStdout(string filename) {
+bool readFileToStdout() {
+    cout << "Here are some fun facts about Lake Powell: " << endl;
+
     // open file stream
     ifstream input;
-    input.open(filename);
+    input.open(POWELL_FACTS_FILENAME, ofstream::out | ofstream::app);
     if (input.fail()) {
-        cerr << "Failed to open the \"" << filename << "\" file to read." << endl;
+        cerr << "Failed to open the \"" << POWELL_FACTS_FILENAME << "\" file to read." << endl;
         return false;
     }
 
@@ -67,6 +67,26 @@ bool readFileToStdout(string filename) {
     }
 
     cout << "Reached end of file." << endl << endl;
+    return true;
+}
+
+
+// function that asks for user input and writes it to a file
+bool printStdinToFile() {
+    cout << "\nTell me your favorite joke and I will add it to my list of jokes! Press enter when done..." << endl;
+    string user_joke;
+    getline(cin, user_joke);
+
+    ofstream output;
+    output.open(JOKES_FILENAME);
+    if (output.fail()) {
+        cerr << "Failed to open the \"" << JOKES_FILENAME << "\" file to write." << endl;
+        return false;
+    }
+
+    output << user_joke;
+    output.close();
+    cout << "Thanks! Your joke has been added!" << endl;
     return true;
 }
 
