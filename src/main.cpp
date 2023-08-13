@@ -10,7 +10,7 @@
 
 #include <iostream>
 #include "InputOutputPractice.h"
-#include "StringyPractice.h"
+#include "stringyPractice.h"
 using namespace std;
 
 // function declarations

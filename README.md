@@ -6,6 +6,9 @@ the c++ syntax for some standard things like file input/output, string manipulat
 
 **********NOTES & CHEATSHEET**********
  - Note: creating new file in windows cmd is "type nul > filename.txt"
+ - Vectors
+   - varName.size()
+   - varName[element#]
  - File Input
     1. #include <fstream>
     2. ifstream/ofstream streamVarName
