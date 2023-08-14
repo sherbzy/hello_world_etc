@@ -23,5 +23,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(Catch2)
 
 # add test file executable(s)
-add_executable(tests test/test_helloWorld.cpp)
+add_executable(tests
+        test/test_helloWorld.cpp
+)
 target_link_libraries(tests PRIVATE Catch2::Catch2WithMain)

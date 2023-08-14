@@ -11,6 +11,7 @@
 #include <iostream>
 #include "InputOutputPractice.h"
 #include "stringyPractice.h"
+#include "CodilityPractice.h"
 #include <cassert>
 using namespace std;
 
@@ -31,6 +32,10 @@ int main() {
     // sting manipulation practice
     cout << "\n\n\n2. Practice stringy stuff." << endl;
     stringyPractice();
+
+    // codility practice
+    CodilityPractice codilityPractice;
+    codilityPractice.testAll();
 
 
 

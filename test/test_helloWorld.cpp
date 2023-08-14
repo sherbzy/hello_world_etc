@@ -17,7 +17,11 @@ TEST_CASE("Dummy Test A", "[hello_world]") {
     REQUIRE( 1 == 1);
     REQUIRE( 1 != 0);
     REQUIRE( 5 < 12);
+    REQUIRE( 19 == 19);
+    REQUIRE( 5 != 0);
+    REQUIRE( 8 < 12);
     cout << "---------- Dummy Test A, Completed ----------" << endl;
+
 }
 
 // dummy tests to make sure testing a func works
@@ -29,7 +33,6 @@ TEST_CASE("Dummy Test B", "[mult]") {
 }
 
 int main(int argc, char* const argv[]) {
-    cout << "Running test_helloWorld.cpp tests:" << endl;
     return Catch::Session().run(argc, argv);
 }
 
