@@ -11,6 +11,7 @@
 #include <iostream>
 #include "InputOutputPractice.h"
 #include "stringyPractice.h"
+#include <cassert>
 using namespace std;
 
 // function declarations
@@ -19,6 +20,9 @@ bool printStdinToFile();
 
 int main() {
     cout << "Hello, World!" << endl;
+
+    // testing assert statement
+    assert(5 * 2 == 10);
 
     // practice reading from and writing to files
     cout << "\n\n\n1. Practice reading from and writing to files." << endl;
